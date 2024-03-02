@@ -13,14 +13,27 @@
 
         $emailquery = "SELECT * FROM customers where email = '$email' ";
         $query = mysqli_query($conn,$emailquery);
+        // var_dump($query);
         $emailcount = mysqli_num_rows($query);
 
         if($emailcount > 0){
-            echo '<script language="javascript">';
-            echo 'alert(Email already exist)';
-            echo '</script>';
+            // echo '<script language="javascript">';
+            // echo 'alert(Email already exist)';
+            // echo '</script>';
+            // echo '<script language="javascript">';
+            // echo 'alert("Email already exists");'; // Corrected syntax
+            // echo '</script>';
+            // header('location: signup.php');
+            // echo '<script>alert("Email already exist");</script>';
+            // exit();
+
+            echo '<script>alert("Email already exists");';
+            echo 'window.location.href = "signup.php";</script>';
+            exit();
+          
         }
-        // else{
+    
+        else{
         // }
         $sql = "INSERT INTO `customers`(`name`,`email`,`phone`,`password`) VALUES ('$name','$email','$phone','$pass')";
 
@@ -34,6 +47,7 @@
         // echo "data inserted successful";
             header('location: home.php');
         }
+    }
     }
 
 
