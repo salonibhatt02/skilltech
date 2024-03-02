@@ -142,7 +142,7 @@
         </div> -->
         <div class="profile-container">
             <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
-            <div class="profile-dropdown">
+            <div class="profile-dropdown" id="dropdown">
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
                 <a href="#">My Courses</a>
                 <hr>
