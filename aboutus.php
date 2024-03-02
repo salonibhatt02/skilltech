@@ -103,14 +103,24 @@ if(!isset($_SESSION['email'])){
             cursor: pointer;
         }
 
-        .profile-container:hover .profile-dropdown {
+        /* .profile-container:hover .profile-dropdown {
             display: block;
-        }
+        } */
         .logout{
             font-weight: bolder;
         }
-
     </style>
+    <script>
+        function display(){
+            var dropdown = document.getElementById("dropdown");
+
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="nav">
@@ -120,7 +130,7 @@ if(!isset($_SESSION['email'])){
         </div>
         <div class="menu">
             <ul class="listu">
-                <a href="home.php"><li class="list">Home</li></a>
+                <a href="courses.php"><li class="list">Home</li></a>
                 <a href="aboutus.php"><li class="list">About us</li></a>
                 <a href="contact-us.php"><li class="list">Contact us</li></a>
             </ul>
@@ -129,9 +139,10 @@ if(!isset($_SESSION['email'])){
             <a href="logout.php" class="btn btn-primary logout">Log out</a>
         </div> -->
         <div class="profile-container">
-            <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px">
-            <div class="profile-dropdown">
+            <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
+            <div class="profile-dropdown" id="dropdown">
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
+                <a href="#">My Courses</a>
                 <hr>
                 <center>
                 <a href="logout.php" style="color:blue;" class="logout">
