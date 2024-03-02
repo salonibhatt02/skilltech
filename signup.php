@@ -54,7 +54,12 @@
                                 alert("Email must be filled out");
                                 return false;
                             }
-                            var letters = /^[A-Za-z]+$/;
+                            // var letters = /^[A-Za-z]+$/;
+                            // var letters = /^[A-Za-z\s]+$/;
+                            // if (!letters.test(name)) {
+                            //     alert("Name must contain only alphabetic characters");
+                            //     return false;
+                            var letters = /^[A-Za-z\s]+$/;
                             if (!letters.test(name)) {
                                 alert("Name must contain only alphabetic characters");
                                 return false;
