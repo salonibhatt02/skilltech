@@ -317,9 +317,18 @@ body{
         .logout{
             font-weight: bolder;
         }  
-    
-
     </style>
+    <script>
+        function display(){
+            var dropdown = document.getElementById("dropdown");
+
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="nav">
@@ -338,7 +347,7 @@ body{
           <a href="logout.php" class="btn btn-primary logout">Log out</a>
       </div> -->
       <div class="profile-container">
-            <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px">
+            <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
             <div class="profile-dropdown">
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
                 <hr>

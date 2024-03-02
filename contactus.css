@@ -512,9 +512,9 @@ body{
             cursor: pointer;
         }
 
-        .profile-container:hover .profile-dropdown {
+        /* .profile-container:hover .profile-dropdown {
             display: block;
-        }
+        } */
         .logout{
             font-weight: bolder;
         }  
