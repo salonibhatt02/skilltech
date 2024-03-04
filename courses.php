@@ -32,13 +32,13 @@
         }
         .cnt{
             display: flex;
-        }
-        .card{ */
-            /* display: flex; */
-            /* margin: 20px; */
-            /* height: 500px; */
-            /* width: 600px; */
-        /* }
+        } */
+        /* .card{ 
+             display: flex; 
+            margin: 20px; 
+             height: 500px; 
+             width: 600px; 
+         }
         .card-title{
             display: inline;
         }
@@ -46,8 +46,8 @@
             margin-left: 170px;
             font-weight: 600;
             font-size: larger
-        }
-        .listu{
+        } */
+        /* .listu{
             list-style-type: none;
             display: inline;
             font-weight: bolder;
@@ -109,6 +109,32 @@
         }
         .logout{
             font-weight: bolder;
+        } 
+        .card-container{
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .card{
+            margin: 19px;
+            width: 720px;
+            display: flex;
+            flex-direction: row;
+            height: 320px;
+        }
+        .card-price{
+          font-size: larger;
+          font-weight: bolder;
+        }
+        .image > img{
+          height: 316px;
+          object-fit: cover;
+        }
+        .card-title{
+          font-weight: bolder;
+        }
+        .card-text{
+          height: 150px;
+          overflow: auto;
         } */
         
     </style>
@@ -159,6 +185,8 @@
     </div>
 
     <div class="cnt">
+    <div class="card-container">
+
     <?php
         include 'connect.php';
         // echo "welcome" . $_SESSION['email'];
@@ -167,42 +195,34 @@
         $result = mysqli_query($conn, $sql);    
 
         while($row = mysqli_fetch_assoc($result)){
-            echo "<div class='card' style='width: 22rem;'>
-                    <img src='product-img\/".$row['image']."' class='card-img-top' alt='...' height='220px' width='150px'>
-                    <div class='card-body'>
-                    <h5 class='card-title'>" . $row['title'] . "</h5> 
-                    <span class='card-price'>Rs. " . $row['price'] . "</span>
-                    <p class='card-text'>" . $row['description'] . "</p>
-                    <center>
-                    <a href='a' class='btn btn-primary'>BUY NOW</a>
-                    </center>
-                    </div>
-                </div>";
+            // echo "<div class='card' style='width: 22rem;'>
+            //         <img src='product-img\/".$row['image']."' class='card-img-top' alt='...' height='220px' width='150px'>
+            //         <div class='card-body'>
+            //         <h5 class='card-title'>" . $row['title'] . "</h5> 
+            //         <span class='card-price'>Rs. " . $row['price'] . "</span>
+            //         <p class='card-text'>" . $row['description'] . "</p>
+            //         <center>
+            //         <a href='a' class='btn btn-primary'>BUY NOW</a>
+            //         </center>
+            //         </div>
+            //     </div>";
+
+            echo "<div class='card'>
+            <div class='image'>
+              <img src='product-img\/".$row['image']."' alt='' height='' width='250px'>
+            </div>
+            <div class='card-body'>
+              <h3 class='card-title'>" . $row['title'] . "</h3>
+              <p class='card-text'>" . $row['description'] . "</p>
+  
+              <p class='card-price'>Rs. " . $row['price'] . "</p>
+              <a href='' class='btn btn-primary'>Buy now</a>
+            </div>
+          </div>";
         }
     ?>
 
-        <!-- //   <div class="card" style="width: 18rem;">
-        //     <img src="..." class="card-img-top" alt="..." height="250px" width="200px">
-        //     <div class="card-body">
-        //       <h5 class="card-title">Card title</h5> 
-        //       <span class="card-price">Rs. 500</span>
-        //       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        //       <center>
-        //       <a href="#" class="btn btn-primary">Go somewhere</a>
-        //       </center>
-        //     </div>
-        //   </div>
-        //   <div class="card" style="width: 18rem;">
-        //     <img src="..." class="card-img-top" alt="..." height="250px" width="200px">
-        //     <div class="card-body">
-        //       <h5 class="card-title">Card title</h5>
-        //       <span class="card-price">Rs. 500</span>
-        //       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        //       <center>
-        //       <a href="#" class="btn btn-primary">Go somewhere</a>
-        //       </center>
-        //     </div>
-        //   </div> -->
+        </div>
     </div>
 </body>
 </html>

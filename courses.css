@@ -17,12 +17,12 @@ body{
 .cnt{
     display: flex;
 }
-.card{
-    /* display: flex; */
-    margin: 20px;
-    /* height: 500px; */
-    /* width: 600px; */
-}
+/* .card{ 
+     display: flex; 
+    margin: 20px; 
+     height: 500px; 
+     width: 600px; 
+ }
 .card-title{
     display: inline;
 }
@@ -30,7 +30,7 @@ body{
     margin-left: 170px;
     font-weight: 600;
     font-size: larger
-}
+} */
 .listu{
     list-style-type: none;
     display: inline;
@@ -88,9 +88,35 @@ body{
     cursor: pointer;
 }
 
-/* .profile-container:hover .profile-dropdown {
+.profile-container:hover .profile-dropdown {
     display: block;
-} */
+}
 .logout{
     font-weight: bolder;
+} 
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+    margin: 19px;
+    width: 720px;
+    display: flex;
+    flex-direction: row;
+    height: 320px;
+}
+.card-price{
+  font-size: larger;
+  font-weight: bolder;
+}
+.image > img{
+  height: 316px;
+  object-fit: cover;
+}
+.card-title{
+  font-weight: bolder;
+}
+.card-text{
+  height: 150px;
+  overflow: auto;
 }

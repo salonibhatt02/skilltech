@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $name;
                 $_SESSION['phone'] = $phone;
-                header("Location: home.php");
+                header("Location: courses.php");
                 exit();    
             }
             else{
