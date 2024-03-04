@@ -1,52 +1,53 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['email'])){
-    header('location: login.php');
-}
+    session_start();
+    
+    if(!isset($_SESSION['email'])){
+        header('location: login.php');
+    }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about us</title>
+    <title>Courses</title>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="test.css"> -->
+    <link rel="stylesheet" href="courses.css">
     <style>
-        .nav{
-    display: flex;
-    justify-content: space-between;
-    height: 70px;
-    align-items: center;
-    background-image: linear-gradient(to right, #93A5CF,#E4EfE9);
-    position: sticky;
-    }
-    .logo{
-        margin: 5px;
-    }
-    body{
-        background-color: #282854;
-    }
-    .about-us{
-        color: whitesmoke;
-        width: 600px;
-        position: absolute;
-        left: 50%;
-        top: 55%;
-        transform: translate(-50%,-50%);
-        text-align: justify;
-    }
-    .about-us > h1{
-        text-align: center;
-        margin-bottom: 25px;
-    }
-    #about-us-bg{
-        height: 100%;
-        width: 100%;
-    }
-    .listu{
+        /* .nav{
+            display: flex;
+            justify-content: space-between;
+            height: 70px;
+            align-items: center;
+            background-image: linear-gradient(to right, #93A5CF,#E4EfE9);
+            position: sticky;
+        }
+        .logo{
+            margin: 5px;
+        }
+        body{
+            background-color: #282854;
+            height: 100%;
+            width: 100%;
+        }
+        .cnt{
+            display: flex;
+        } */
+        /* .card{ 
+             display: flex; 
+            margin: 20px; 
+             height: 500px; 
+             width: 600px; 
+         }
+        .card-title{
+            display: inline;
+        }
+        .card-price{
+            margin-left: 170px;
+            font-weight: 600;
+            font-size: larger
+        } */
+        /* .listu{
             list-style-type: none;
             display: inline;
             font-weight: bolder;
@@ -103,12 +104,39 @@ if(!isset($_SESSION['email'])){
             cursor: pointer;
         }
 
-        /* .profile-container:hover .profile-dropdown {
+        .profile-container:hover .profile-dropdown {
             display: block;
-        } */
+        }
         .logout{
             font-weight: bolder;
+        } 
+        .card-container{
+          display: flex;
+          flex-wrap: wrap;
         }
+        .card{
+            margin: 19px;
+            width: 720px;
+            display: flex;
+            flex-direction: row;
+            height: 320px;
+        }
+        .card-price{
+          font-size: larger;
+          font-weight: bolder;
+        }
+        .image > img{
+          height: 316px;
+          object-fit: cover;
+        }
+        .card-title{
+          font-weight: bolder;
+        }
+        .card-text{
+          height: 150px;
+          overflow: auto;
+        } */
+        
     </style>
     <script>
         function display(){
@@ -156,28 +184,46 @@ if(!isset($_SESSION['email'])){
             </div>
       </div>
     </div>
-    
-        <img src="aboutusbg.png" alt="bg-img" id="about-us-bg">
 
-    <div class="about-us">
-        <h1>About Us</h1>
-        <p>SkillTech is a leading online platform dedicated to providing top-tier technical courses tailored to meet the demands of today's rapidly evolving digital landscape. Our mission is to empower individuals with the skills and knowledge necessary to succeed in the ever-changing world of technology. At SkillTech, we pride ourselves on offering a diverse array of courses spanning various technical domains, including programming, cybersecurity, data science, cloud computing, and more. <br>
-<br>
-            What sets SkillTech apart is our commitment to excellence in education. We collaborate with industry experts and educators to develop curriculum that is not only comprehensive but also highly relevant to real-world applications. Our courses are designed to be engaging, interactive, and practical, ensuring that learners acquire not only theoretical knowledge but also hands-on experience.
-            <br>
-            <br>
-            Whether you're a beginner taking your first steps into the world of technology or a seasoned professional looking to expand your skill set, SkillTech has something for everyone. Our user-friendly platform makes learning convenient and accessible, allowing you to study at your own pace, anytime, anywhere. Join the SkillTech community today and embark on a journey of continuous learning and professional growth. Unlock your potential with SkillTech, where education meets innovation.
-            
+    <div class="cnt">
+    <div class="card-container">
+
+    <?php
+        include 'connect.php';
+        // echo "welcome" . $_SESSION['email'];
+
+        $sql = "SELECT * FROM product WHERE `categories` = 'android'";
+        $result = mysqli_query($conn, $sql);    
+
+        while($row = mysqli_fetch_assoc($result)){
+            // echo "<div class='card' style='width: 22rem;'>
+            //         <img src='product-img\/".$row['image']."' class='card-img-top' alt='...' height='220px' width='150px'>
+            //         <div class='card-body'>
+            //         <h5 class='card-title'>" . $row['title'] . "</h5> 
+            //         <span class='card-price'>Rs. " . $row['price'] . "</span>
+            //         <p class='card-text'>" . $row['description'] . "</p>
+            //         <center>
+            //         <a href='a' class='btn btn-primary'>BUY NOW</a>
+            //         </center>
+            //         </div>
+            //     </div>";
+
+            echo "<div class='card'>
+            <div class='image'>
+              <img src='product-img\/".$row['image']."' alt='' height='' width='250px'>
+            </div>
+            <div class='card-body'>
+              <h3 class='card-title'>" . $row['title'] . "</h3>
+              <p class='card-text'>" . $row['description'] . "</p>
+  
+              <p class='card-price'>Rs. " . $row['price'] . "</p>
+              <a href='' class='btn btn-primary'>Buy now</a>
+            </div>
+          </div>";
+        }
+    ?>
+
+        </div>
     </div>
-    
-    
-
-
-
-
-
-
-
-    
 </body>
 </html>

@@ -19,8 +19,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   $price = $_POST["price"];
   $description = $_POST["description"];
   $image = $_POST["image"];
+  $categories = $_POST["categories"];
 
-  $sql = "INSERT INTO `product`(`title`,`price`,`description`,`image`) VALUES ('$title','$price','$description','$image')";
+  $sql = "INSERT INTO `product`(`title`,`price`,`description`,`image`,`categories`) VALUES ('$title','$price','$description','$image','$categories')";
 
   $result = mysqli_query($conn, $sql);
 
@@ -53,6 +54,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             <label for="exampleFormControlInput1">Description</label>
             <input type="text" class="form-control" id="Description" name="description" placeholder="About your product">
         </div>
+        <div class="form-group">
+                            <label for="exampleFormControlInput1">categories:</label>
+        
+                                <select id="categories" name="categories">
+                                    <option value="web">Web Development</option>
+                                    <option value="designing">Designing</option>
+                                    <option value="android">Android Development</option>
+                                    <option value="analysis">Analysis</option>
+                                </select>
+                            </div> 
         <div class="form-group">
             <label for="exampleFormControlInput1">Price</label>
             <input type="number" class="form-control" id="Price" name="price" placeholder="100 INR">

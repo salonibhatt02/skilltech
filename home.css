@@ -14,52 +14,6 @@ body{
     height: 100%;
     width: 100%;
 }
-.cnt{
-    display: flex;
-}
-/* .card{ */
-    /* display: flex; */
-    /* margin: 20px; */
-    /* height: 500px; */
-    /* width: 600px; */
-/* }
-.card-title{
-    display: inline;
-}
-.card-price{
-    margin-left: 170px;
-    font-weight: 600;
-    font-size: larger
-} */
-
-.card-container{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .card{
-      margin: 19px;
-      width: 720px;
-      display: flex;
-      flex-direction: row;
-      height: 320px;
-      z-index: -1;
-  }
-  .card-price{
-    font-size: larger;
-    font-weight: bolder;
-  }
-  .image > img{
-    height: 316px;
-    object-fit: cover;
-  }
-  .card-title{
-    font-weight: bolder;
-  }
-  .card-text{
-    height: 150px;
-    overflow: auto;
-  }
-
 .listu{
     list-style-type: none;
     display: inline;
@@ -122,4 +76,26 @@ body{
 } */
 .logout{
     font-weight: bolder;
+}
+.card{
+    margin-bottom: 10px;
+    background-color: linear-gradient(to right, #93A5CF,#E4EfE9);
+}
+.card-body>h4{
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+.card-text{
+    color: rgb(8, 43, 242);
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0px;
+    justify-content: space-evenly;
+}
+.carousel-item{
+    opacity: 0.8;
+    z-index: -1;
 }

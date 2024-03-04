@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Courses</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="courses.css">
@@ -159,7 +159,7 @@
         <div class="menu">
             <ul class="listu">
                 <a href="home.php"><li class="list">Home</li></a>
-                <a href="courses.php"><li class="list">Courses</li></a>
+                <a href="categories.php"><li class="list">Courses</li></a>
                 <a href="aboutus.php"><li class="list">About us</li></a>
                 <a href="contact-us.php"><li class="list">Contact us</li></a>
             </ul>
@@ -192,7 +192,7 @@
         include 'connect.php';
         // echo "welcome" . $_SESSION['email'];
 
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT * FROM product WHERE `categories` = 'web'";
         $result = mysqli_query($conn, $sql);    
 
         while($row = mysqli_fetch_assoc($result)){
