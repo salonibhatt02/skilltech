@@ -338,7 +338,8 @@ body{
         </div>
         <div class="menu">
           <ul class="listu">
-              <a href="courses.php"><li class="list">Home</li></a>
+              <a href="home.php"><li class="list">Home</li></a>
+              <a href="courses.php"><li class="list">Courses</li></a>
               <a href="aboutus.php"><li class="list">About us</li></a>
               <a href="contact-us.php"><li class="list">Contact us</li></a>
           </ul>
