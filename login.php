@@ -42,7 +42,7 @@
     margin-right: 25px;
     margin-bottom: 0px;
 }
-    </style>
+  </style>
     <script>
         function show(){
             var passwordInput = document.getElementById("pass");

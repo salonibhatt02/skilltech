@@ -119,6 +119,9 @@ if(!isset($_SESSION['email'])){
 .items > a{
     text-decoration: none;
 }
+.items > a:hover{
+    transform: scale(1.1);
+}
 /* .bg-img{ */
     /* background-color: rgb(14, 44, 101); */
     /* background-image: url("login-bg-img.png");
@@ -153,7 +156,7 @@ if(!isset($_SESSION['email'])){
         <div class="menu">
             <ul class="listu">
                 <a href="home.php"><li class="list">Home</li></a>
-                <a href="courses.php"><li class="list">Courses</li></a>
+                <a href="categories.php"><li class="list">Courses</li></a>
                 <a href="aboutus.php"><li class="list">About us</li></a>
                 <a href="contact-us.php"><li class="list">Contact us</li></a>
             </ul>
@@ -168,14 +171,14 @@ if(!isset($_SESSION['email'])){
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
                 <a href="#">My Courses</a>
                 <hr>
-                <center>
+                <!-- <center> -->
                 <a href="logout.php" style="color:blue;" class="logout">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
                 </svg>
                 Logout</a>
-                </center>
+                <!-- </center> -->
             </div>
       </div>
     </div>

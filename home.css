@@ -96,6 +96,9 @@ body{
     justify-content: space-evenly;
 }
 .carousel-item{
-    opacity: 0.8;
+    opacity: 0.7;
     z-index: -1;
 }
+#carouselExampleAutoplaying{
+    margin-top:10px;
+  }

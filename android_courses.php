@@ -12,6 +12,9 @@
     <title>Courses</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <link rel="stylesheet" href="courses.css">
     <style>
         /* .nav{
@@ -173,57 +176,71 @@
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
                 <a href="#">My Courses</a>
                 <hr>
-                <center>
+                <!-- <center> -->
                 <a href="logout.php" style="color:blue;" class="logout">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
                 </svg>
                 Logout</a>
-                </center>
+                <!-- </center> -->
             </div>
       </div>
     </div>
 
-    <div class="cnt">
+     
+
+  <div class="cnt">
     <div class="card-container">
 
-    <?php
-        include 'connect.php';
-        // echo "welcome" . $_SESSION['email'];
+                <?php
+                    include 'connect.php';
+                    // echo "welcome" . $_SESSION['email'];
 
-        $sql = "SELECT * FROM product WHERE `categories` = 'android'";
-        $result = mysqli_query($conn, $sql);    
-
-        while($row = mysqli_fetch_assoc($result)){
-            // echo "<div class='card' style='width: 22rem;'>
-            //         <img src='product-img\/".$row['image']."' class='card-img-top' alt='...' height='220px' width='150px'>
-            //         <div class='card-body'>
-            //         <h5 class='card-title'>" . $row['title'] . "</h5> 
-            //         <span class='card-price'>Rs. " . $row['price'] . "</span>
-            //         <p class='card-text'>" . $row['description'] . "</p>
-            //         <center>
-            //         <a href='a' class='btn btn-primary'>BUY NOW</a>
-            //         </center>
-            //         </div>
-            //     </div>";
-
-            echo "<div class='card'>
-            <div class='image'>
-              <img src='product-img\/".$row['image']."' alt='' height='' width='250px'>
+                    $sql = "SELECT * FROM product WHERE `categories` = 'android'";
+                    $result = mysqli_query($conn, $sql);   
+                    while($row = mysqli_fetch_assoc($result)){
+                      ?>
+                          <div class='card'>
+                              <div class='image'>
+                                  <img src='product-img/<?php echo $row['image'] ?>' alt='' height='' width='250px'>
+                              </div>
+                              <div class='card-body'>
+                                  <h3 class='card-title'><?php echo $row['title'] ?></h3>
+                                  <p class='card-text'><?php echo $row['description'] ?></p>
+                                  <p class='card-price'>Rs. <?php echo $row['price'] ?></p>
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                     BUY NOW
+                                  </button>
+                              </div>
+                          </div>
+                      <?php
+                          }
+                      ?>
+          
+          
+                  </div>
+              </div>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
             </div>
-            <div class='card-body'>
-              <h3 class='card-title'>" . $row['title'] . "</h3>
-              <p class='card-text'>" . $row['description'] . "</p>
-  
-              <p class='card-price'>Rs. " . $row['price'] . "</p>
-              <a href='' class='btn btn-primary'>Buy now</a>
-            </div>
-          </div>";
-        }
-    ?>
+          </div> 
 
-        </div>
-    </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

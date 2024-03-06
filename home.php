@@ -26,6 +26,11 @@ if(!isset($_SESSION['email'])){
           }
       }
   </script>
+  <style>
+    /* #carouselExampleAutoplaying{
+      margin-top:10px;
+    } */
+  </style>
 </head>
 <body>
   <div class="nav">
@@ -50,28 +55,29 @@ if(!isset($_SESSION['email'])){
               <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
               <a href="#">My Courses</a>
               <hr>
-              <center>
+              <!-- <center> -->
               <a href="logout.php" style="color:blue;" class="logout">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
               <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
               </svg>
               Logout</a>
-              </center>
+              <!-- </center> -->
           </div>
     </div>
   </div>
 
+  <center>
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="bg_1.jpg" class="d-block w-100" alt="..." height="450px" width="60%">
+          <img src="bg_1.jpg"  alt="..." height="450px" width="1000px">
         </div>
         <div class="carousel-item">
-          <img src="bg_2.jpg" class="d-block w-100" alt="..." height="450px" width="60%">
+          <img src="bg_2.jpg"  alt="..." height="450px" width="1000px">
         </div>
         <div class="carousel-item">
-          <img src="bg_5.jpg" class="d-block w-100" alt="..." height="450px" width="60%">
+          <img src="bg_5.jpg"  alt="..." height="450px" width="1000px">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -83,7 +89,8 @@ if(!isset($_SESSION['email'])){
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    
+    </center>
+
     <div class="items">
       <div class="card" style="width: 18rem;">
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-text-fill" viewBox="0 0 16 16"> -->
