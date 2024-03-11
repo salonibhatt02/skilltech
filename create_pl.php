@@ -1,4 +1,20 @@
-<?php
+ <?php
+
+session_start();
+    
+if(!isset($_SESSION['email'])){
+    header('location: login.php');
+}
+
+include 'connect.php';
+
+$cus_email = $_SESSION['email'];
+$cus_name = $_SESSION['name'];
+$cus_phone = $_SESSION['phone'];
+
+$link_amount = $_GET['amount'];
+$link_purpose = $_GET['title'];
+// Get the price and title from the modal
 
 $curl = curl_init();
 
@@ -13,18 +29,18 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
   "customer_details": {
-    "customer_phone": "9998105971",
-    "customer_email": "gauravsp2003@gmail.com",
-    "customer_name": "Gaurav"
+    "customer_phone": "' . $cus_phone . '",
+    "customer_email": "' . $cus_email . '",
+    "customer_name": "' . $cus_name . '"
   },
   "link_notify": {
     "send_sms": true,
     "send_email": true
   },
-  "link_id": "my_product_52",
-  "link_amount": 100,
+  "link_id": "my_product_88",
+  "link_amount": "' . $link_amount . '",
   "link_currency": "INR",
-  "link_purpose": "Payment for book"
+  "link_purpose": "' . $link_purpose . '"
 }
 ',
   CURLOPT_HTTPHEADER => array(
@@ -36,16 +52,45 @@ curl_setopt_array($curl, array(
   ),
 ));
 
+
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
+
 if($err){
     echo "cURL Error #:" . $err;
 }
 else{
     // echo $response;
+   
     $result = json_decode($response);
-    header('Location: '.$result->link_url);
 
-}
+    $customer_name = $result->customer_details->customer_name;
+    $customer_phone = $result->customer_details->customer_phone;
+    $customer_email = $result->customer_details->customer_email;
+    $link_id = $result->link_id;
+    $payment_amount = $result->link_amount;
+    $payment_purpose = $result->link_purpose;
+
+    $sql = "INSERT INTO `link_details`(`customer_name`,`customer_phone`,`customer_email`,`link_id`,`payment_amount`,`payment_purpose`) VALUES ('$customer_name','$customer_phone','$customer_email','$link_id','$payment_amount','$payment_purpose')";
+
+    $result1 = mysqli_query($conn, $sql);
+   
+    header('Location: '.$result->link_url);
+   
+    // $customer_name = $result->customer_name;
+
+    // var_dump($customer_name);
+    // $customer_phone = $result->customer_phone;
+    // $customer_email = $result->customer_email;
+    // $link_id = $result->link_id;
+    // $payment_amount = $result->link_amount;
+    // $payment_purpose = $result->link_purpose;
+
+    // $sql = "INSERT INTO `link_details`(`customer_name`,`customer_phone`,`customer_email`,`link_id`,`payment_amount`,`payment_purpose`) VALUES ('$customer_name','$customer_phone','$customer_email','$link_id','$payment_amount','$payment_purpose')";
+
+    // $result1 = mysqli_query($conn, $sql);
+    }
+
+?>

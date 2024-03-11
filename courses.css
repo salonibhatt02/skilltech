@@ -18,6 +18,10 @@ body{
 .cnt{
     display: flex;
 }
+.welcome{
+    position: absolute;
+    right: 72px;
+}
 .profile-container {
     position: relative;
     display: inline-block;
@@ -86,6 +90,10 @@ body{
     font-size: larger;
     font-weight: bolder;
   }
+  .modal-price{
+    font-size: larger;
+    font-weight: bolder;
+  }
   .image > img{
     height: 316px;
     object-fit: cover;
@@ -123,6 +131,7 @@ body{
 .logout{
     margin-right: 12px;
 }
+
 /* .profile-container {
     position: relative;
     display: inline-block;

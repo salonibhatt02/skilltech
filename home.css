@@ -102,3 +102,7 @@ body{
 #carouselExampleAutoplaying{
     margin-top:10px;
   }
+.welcome{
+    position: absolute;
+    right: 72px;
+}

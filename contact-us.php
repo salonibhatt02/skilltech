@@ -347,6 +347,9 @@ body{
       <!-- <div>
           <a href="logout.php" class="btn btn-primary logout">Log out</a>
       </div> -->
+      <div class="welcome">
+            <h5><?php echo "Welcome, " . $_SESSION['name'] ?></h5>
+      </div>
       <div class="profile-container">
             <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
             <div class="profile-dropdown" id="dropdown">
