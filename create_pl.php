@@ -12,9 +12,27 @@ $cus_email = $_SESSION['email'];
 $cus_name = $_SESSION['name'];
 $cus_phone = $_SESSION['phone'];
 
+
+
+
 $link_amount = $_GET['amount'];
 $link_purpose = $_GET['title'];
 // Get the price and title from the modal
+
+// File to store the link ID counter
+$counterFile = 'link_id.txt';
+
+// Read the current counter value from the file
+$currentCounter = file_get_contents($counterFile);
+
+// Increment the counter
+$newCounter = $currentCounter + 1;
+
+// Generate a link ID using the incremented counter
+$newLinkId = "my_product_" . $newCounter;
+
+// Write the updated counter back to the file
+file_put_contents($counterFile, $newCounter);
 
 $curl = curl_init();
 
@@ -37,7 +55,7 @@ curl_setopt_array($curl, array(
     "send_sms": true,
     "send_email": true
   },
-  "link_id": "my_product_88",
+  "link_id": "' . $newLinkId . '",
   "link_amount": "' . $link_amount . '",
   "link_currency": "INR",
   "link_purpose": "' . $link_purpose . '"
@@ -92,5 +110,5 @@ else{
 
     // $result1 = mysqli_query($conn, $sql);
     }
-
-?>
+    ?>
+    

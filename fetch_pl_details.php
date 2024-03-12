@@ -34,17 +34,23 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-// echo $response;
+echo $response;
 
 $result = json_decode($response);
 
-$customer_name = $result->customer_details->customer_name;
-$customer_phone = $result->customer_details->customer_phone;
-$customer_email = $result->customer_details->customer_email;
-$link_amount = $result->link_amount;
-$link_purpose = $result->link_purpose;
-$link_status = $result->link_status;
+// $customer_name = $result->customer_details->customer_name;
+// echo $customer_name;
+// $customer_phone = $result->customer_details->customer_phone;
+// echo $customer_phone;
+// $customer_email = $result->customer_details->customer_email;
+// echo $customer_email;
+// $link_amount = $result->link_amount;
+// echo $link_amount;
+// $link_purpose = $result->link_purpose;
+// echo $link_purpose;
+// $link_status = $result->link_status;
+// echo $link_status;
 
-$sql2 = "";
+// $sql2 = "";
 
 ?>

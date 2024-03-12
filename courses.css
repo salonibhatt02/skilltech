@@ -97,6 +97,7 @@ body{
   .image > img{
     height: 316px;
     object-fit: cover;
+    padding: 40px 0px;
   }
   .card-title{
     font-weight: bolder;
