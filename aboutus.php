@@ -113,6 +113,9 @@ if(!isset($_SESSION['email'])){
             position: absolute;
             right: 72px;
         }
+        hr{
+            margin: 0.5rem 0;
+        }
     </style>
     <script>
         function display(){
@@ -151,6 +154,8 @@ if(!isset($_SESSION['email'])){
             <div class="profile-dropdown" id="dropdown">
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
                 <a href="#">My Courses</a>
+                <hr>
+                <a href="edit_profile.php">Edit Profile</a>
                 <hr>
                 <!-- <center> -->
                 <a href="logout.php" style="color:blue;" class="logout">
