@@ -130,7 +130,13 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <a href="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>"name="abc"class="btn btn-primary">PAY NOW</a>
+                        <!-- <a href="payment_page.php">PAY NOW</a> -->
+
+                        <!-- <iframe  name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+                        <p><a href="create_pl.php?amount=?amount=" target="iframe_a">pay now</a></p> -->
+
+                        <a href="payment_page.php" class="btn btn-primary">Pay Now</a>
+
                     </div>
             </div>
     </div>
