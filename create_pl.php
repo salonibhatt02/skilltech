@@ -111,4 +111,15 @@ else{
     // $result1 = mysqli_query($conn, $sql);
     }
     ?>
-    
+
+<!-- <script>
+  window.onload = function() {
+    // Select the elements you want to style on the linked page
+    var elementsToStyle = document.getElementByClassName('payment-info');
+
+    // Apply CSS styles to each selected element
+    elementsToStyle.forEach(function(element) {
+      element.style.display = 'none'; // Replace property and value with your desired CSS
+    });
+  };
+</script> -->

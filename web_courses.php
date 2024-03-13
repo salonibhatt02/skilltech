@@ -135,7 +135,8 @@
                         <!-- <iframe  name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
                         <p><a href="create_pl.php?amount=?amount=" target="iframe_a">pay now</a></p> -->
 
-                        <a href="payment_page.php" class="btn btn-primary">Pay Now</a>
+                        <!-- <a href="payment_page.php" class="btn btn-primary">Pay Now</a> -->
+                        <a href="payment_page.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">Pay Now</a>
 
                     </div>
             </div>

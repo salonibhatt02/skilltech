@@ -8,7 +8,7 @@ $sql = "SELECT link_id from link_details";
 $result1 = mysqli_query($conn, $sql);
 
 // Fetching the link_id from the result object
-$row = mysqli_fetch_assoc($result1);
+while($row = mysqli_fetch_assoc($result1));{
 $link_id = $row['link_id'];
 
 // $a = "my_product_77";
@@ -52,5 +52,6 @@ $result = json_decode($response);
 // echo $link_status;
 
 // $sql2 = "";
+}
 
 ?>

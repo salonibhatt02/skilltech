@@ -1,10 +1,31 @@
 <?php
+// session_start();
+
+// if(!isset($_SESSION['email'])){
+//     header('location: login.php');
+// }
+
 session_start();
 
-if(!isset($_SESSION['email'])){
+if (!isset($_SESSION['email'])) {
     header('location: login.php');
+    exit; // Stop further execution
 }
+
+if (!isset($_GET['amount']) || !isset($_GET['title'])) {
+    // If the required parameters are not provided, handle the error
+    echo "Error: Missing parameters.";
+    exit; // Stop further execution
+}
+
+$amount = $_GET['amount'];
+
+// $title = $_GET['title'];
+
+// Use $amount and $title to generate the payment link or perform any other necessary actions
 ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -57,24 +78,55 @@ if(!isset($_SESSION['email'])){
     include 'connect.php';
     // echo "welcome" . $_SESSION['email'];
 
-    $sql = "SELECT * FROM product WHERE `categories` = 'web'";
+    $link_purpose = $_GET['title'];
+    // echo "var_dump($link_purpose)";
+    // $link_id = $_GET['link_id'];
+
+    $sql = "SELECT * FROM product WHERE `title` = '$link_purpose'";
     $result = mysqli_query($conn, $sql);    
 
    
         while($row = mysqli_fetch_assoc($result)){
             ?>
 
+<div class='card'>
+                    <div class='image'>
+                        <img src='product-img/<?php echo $row['image'] ?>' alt='' height='' width='250px'>
+                    </div>
+                    <div class='card-body'>
+                        <h3 class='card-title'><?php echo $row['title'] ?></h3>
+                        <p class='card-text'><?php echo $row['description'] ?></p>
+                        <p class='card-price'>Rs. <?php echo $row['price'] ?></p>
+                        </div>
+                </div>
+           
+
   
   <!-- <iframe src="create_pl.php?amount=" name="abc" width="100%" height="550" style="border:none;">
 </iframe> -->
 
-                        <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="100%" height="550" style="border:none;"></iframe>
+                        <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="50%" height="550" style="border:none;"></iframe>
 
 
- 
+<!-- &link_id= echo $link_id;  -->
 <!-- <button type="button" class="btn btn-primary" > CANCEL </button> -->
-<a href="cancel_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">CANCEL</a>
+<a href="cancel_pl.php?link_id=<?php echo urlencode($link_id); ?>&amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">CANCEL</a>
+
+
+
 <?php } ?>
+
+<!-- <script>
+  window.onload = function() {
+    // Select the elements you want to style on the linked page
+    var elementsToStyle = document.getElementsByClassName('payment-info');
+
+    // Apply CSS styles to each selected element
+    for (var i = 0; i < elementsToStyle.length; i++) {
+      elementsToStyle[i].style.display = 'none'; // Replace property and value with your desired CSS
+    }
+  };
+</script> -->
 
     </body>
     </html>

@@ -126,7 +126,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <a href="payment_page.php" class="btn btn-primary">Pay Now</a>
+                        <!-- <a href="payment_page.php" class="btn btn-primary">Pay Now</a> -->
+                        <a href="payment_page.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">Pay Now</a>
                     </div>
             </div>
     </div>
