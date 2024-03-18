@@ -118,6 +118,7 @@ $amount = $_GET['amount'];
 
 <!-- <script>
   window.onload = function() {
+    console.log("Page loaded"); 
     // Select the elements you want to style on the linked page
     var elementsToStyle = document.getElementsByClassName('payment-info');
 
@@ -127,6 +128,8 @@ $amount = $_GET['amount'];
     }
   };
 </script> -->
+
+
 
     </body>
     </html>
