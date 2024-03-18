@@ -65,31 +65,30 @@
     </div>
 
     <div class="cnt">
-    <div class="card-container">
+    <div class="course-card-container">
 
     <?php
         include 'connect.php';
         // echo "welcome" . $_SESSION['email'];
 
-        $sql = "SELECT * FROM product WHERE `categories` = 'designing'";
+        $sql = "SELECT * FROM product WHERE `categories` = 'Designing'";
         $result = mysqli_query($conn, $sql);    
 
        
             while($row = mysqli_fetch_assoc($result)){
                 ?>
-                    <div class='card'>
-                        <div class='image'>
-                            <img src='product-img/<?php echo $row['image'] ?>' alt='' height='' width='250px'>
-                        </div>
-                        <div class='card-body'>
-                            <h3 class='card-title'><?php echo $row['title'] ?></h3>
-                            <p class='card-text'><?php echo $row['description'] ?></p>
-                            <p class='card-price'>Rs. <?php echo $row['price'] ?></p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['id'] ?>">
-                               BUY NOW
-                            </button>
-                        </div>
-                    </div>
+                   
+                
+                    <div class="course-card">
+                    <img src='product-img/<?php echo $row['image'] ?>' alt="Course Image 1">
+                    <hr>
+                    <h2><?php echo $row['title'] ?></h2>
+                    <p><?php echo $row['categories'] ?></p>
+                    <p>Rs. <?php echo $row['price'] ?></p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['id'] ?>">Buy Now</button>
+                </div>
+                
+                </div>
                 <?php
                     }
                 ?>

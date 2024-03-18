@@ -58,10 +58,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                             <label for="exampleFormControlInput1">categories:</label>
         
                                 <select id="categories" name="categories">
-                                    <option value="web">Web Development</option>
-                                    <option value="designing">Designing</option>
-                                    <option value="android">Android Development</option>
-                                    <option value="analysis">Analysis</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Designing">Designing</option>
+                                    <option value="Android Development">Android Development</option>
+                                    <option value="Analysis">Analysis</option>
                                 </select>
                             </div> 
         <div class="form-group">

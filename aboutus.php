@@ -22,6 +22,7 @@ if(!isset($_SESSION['email'])){
     align-items: center;
     background-image: linear-gradient(to right, #93A5CF,#E4EfE9);
     position: sticky;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     .logo{
         margin: 5px;
@@ -115,6 +116,9 @@ if(!isset($_SESSION['email'])){
         }
         hr{
             margin: 0.5rem 0;
+        }
+        *{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
     </style>
     <script>
