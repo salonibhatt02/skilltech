@@ -161,6 +161,8 @@ if(!isset($_SESSION['email'])){
                 <hr>
                 <a href="edit_profile.php">Edit Profile</a>
                 <hr>
+                <a href="transactions.php">Transactions</a>
+                <hr>
                 <!-- <center> -->
                 <a href="logout.php" style="color:blue;" class="logout">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
