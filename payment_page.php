@@ -110,7 +110,7 @@ $amount = $_GET['amount'];
 
 <!-- &link_id= echo $link_id;  -->
 <!-- <button type="button" class="btn btn-primary" > CANCEL </button> -->
-<a href="cancel_pl.php?link_id=<?php echo urlencode($link_id); ?>&amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">CANCEL</a>
+<a href="cancel_pl.php" class="btn btn-primary">CANCEL</a>
 
 
 
