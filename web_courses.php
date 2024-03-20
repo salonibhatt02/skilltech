@@ -149,7 +149,7 @@
                         <p><a href="create_pl.php?amount=?amount=" target="iframe_a">pay now</a></p> -->
 
                         <!-- <a href="payment_page.php" class="btn btn-primary">Pay Now</a> -->
-                        <a href="payment_page.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">Pay Now</a>
+                        <a href="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">Pay Now</a>
 
                     </div>
             </div>
