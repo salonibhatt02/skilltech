@@ -135,7 +135,7 @@
                     element.classList.add("active");
                 } else if (statusText === "PAID") {
                     element.classList.add("paid");
-                } else if (statusText === "FAILURE") {
+                } else if (statusText === "CANCELLED") {
                     element.classList.add("failure");
                 }
             });

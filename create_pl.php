@@ -55,6 +55,9 @@ curl_setopt_array($curl, array(
     "send_sms": true,
     "send_email": true
   },
+  "link_meta": {
+    "return_url": "http://localhost/skilltech/thankyou.php"
+  },
   "link_id": "' . $newLinkId . '",
   "link_amount": "' . $link_amount . '",
   "link_currency": "INR",
@@ -94,6 +97,8 @@ else{
     $sql = "INSERT INTO `link_details`(`customer_name`,`customer_phone`,`customer_email`,`link_id`,`payment_amount`,`payment_purpose`) VALUES ('$customer_name','$customer_phone','$customer_email','$link_id','$payment_amount','$payment_purpose')";
 
     $result1 = mysqli_query($conn, $sql);
+
+    $_SESSION['link_id'] = $link_id;
    
     header('Location: '.$result->link_url);
    

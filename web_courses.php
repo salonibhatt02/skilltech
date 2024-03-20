@@ -115,7 +115,7 @@
     include 'connect.php';
     // echo "welcome" . $_SESSION['email'];
 
-    $sql = "SELECT * FROM product WHERE `categories` = 'web'";
+    $sql = "SELECT * FROM product WHERE `categories` = 'Web Development'";
     $result = mysqli_query($conn, $sql);    
 
    
