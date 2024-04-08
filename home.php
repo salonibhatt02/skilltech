@@ -27,9 +27,49 @@ if(!isset($_SESSION['email'])){
       }
   </script>
   <style>
-    /* #carouselExampleAutoplaying{
-      margin-top:10px;
-    } */
+    .bg-img > img{
+      height: 90vh;
+      width: 100%;
+    }
+    .bg-text{
+      position: absolute;
+      top: 22%;
+      left: 7%;
+    }
+    .bg-text > h1{
+      font-size: 50px;
+    }
+    .bg-text > p{
+      font-size: larger;
+      font-weight: 600;
+      width: 650px;
+      margin-top: 52px;
+      padding-top: 10px;
+    }
+    .explore{
+      position: absolute;
+      top: 54%;
+      left: 7%;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 8px;
+      background-color: rgb(7, 87, 87);
+    }
+    .explore > a{
+      text-decoration: none;
+      color: white;
+      font-size: large;
+    }
+    .explore > a > svg{
+      margin-left: 6px;
+    }
+    .explore:hover{
+      background-color: rgb(128, 184, 44);
+    }
+    .card-text{
+      color: black;
+    }
+
   </style>
 </head>
 <body>
@@ -56,7 +96,11 @@ if(!isset($_SESSION['email'])){
           <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
           <div class="profile-dropdown" id="dropdown">
               <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
-              <a href="#">My Courses</a>
+              <a href="my_courses.php">My Courses</a>
+              <hr>
+              <a href="edit_profile.php">Edit Profile</a>
+              <hr>
+              <a href="transactions.php">Transactions</a>
               <hr>
               <!-- <center> -->
               <a href="logout.php" style="color:blue;" class="logout">
@@ -70,7 +114,7 @@ if(!isset($_SESSION['email'])){
     </div>
   </div>
 
-  <center>
+  <!-- <center>
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -92,46 +136,75 @@ if(!isset($_SESSION['email'])){
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    </center> -->
+
+    <div class="bg-img">
+      <img src="WhatsApp Image 2024-03-30 at 5.15.19 PM.jpeg" alt="">
+    </div>
+    <div class="bg-text">
+      <h1>Grow up you skills with <span style="color: cornflowerblue;">SkillTech</span></h1>
+      <p>Learn about various technical skills. The latest online learning platform
+        that help your knowledge growing.</p>
+      </div>
+    <div class="explore">
+      <a href="categories.php">Explore now 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-circle-fill" viewBox="0 0 16 16">
+          <path d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8m5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707z"/>
+        </svg>
+      </a>
+    </div>
+
+    <center>
+      <h1 class="mt-4 mb-5" style="color: whitesmoke;">Our Services</h1>
     </center>
 
     <div class="items">
       <div class="card" style="width: 18rem;">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-text-fill" viewBox="0 0 16 16"> -->
-          <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zm0 2.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zm0 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z"/>
+        <center>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-check-fill mt-3" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+          <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
         </svg>
+        </center>
         <div class="card-body">
           <h4>Certified Teachers</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic veniam, ad officiis ipsam sequi praesentium?</p>
         </div>
       </div>
     
       <div class="card" style="width: 18rem;">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-code-fill" viewBox="0 0 16 16"> -->
-          <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708z"/>
-        </svg>
+        <center>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-patch-check-fill mt-3" viewBox="0 0 16 16">
+            <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+          </svg>
+        </center>
         <div class="card-body">
           <h4>Special Education</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic veniam, ad officiis ipsam sequi praesentium?</p>
         </div>
       </div>
     
       <div class="card" style="width: 18rem;">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16"> -->
-          <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
-        </svg>
+        <center>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-book-half mt-3" viewBox="0 0 16 16">
+            <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+          </svg>
+        </center>
         <div class="card-body">
           <h4>Book &amp; Library</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic veniam, ad officiis ipsam sequi praesentium?</p>
         </div>
       </div>
       
       <div class="card" style="width: 18rem;">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16"> -->
-          <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
-        </svg>
+        <center>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-earmark-play-fill mt-3" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6 6.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43V6.884z"/>
+          </svg>
+        </center>
         <div class="card-body">
-          <h4>Sport Clubs</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <h4>Remote Learning</h4>
+          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic veniam, ad officiis ipsam sequi praesentium?</p>
         </div>
       </div>
 

@@ -4,6 +4,7 @@
     if(!isset($_SESSION['email'])){
         header('location: login.php');
     }
+    include 'fetch_test.php';
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +58,14 @@
         <!-- <div>
             <a href="logout.php" class="btn btn-primary logout">Log out</a>
         </div> -->
+        <div class="menu">
+            <ul class="listu">
+                <a href="home.php"><li class="list">Home</li></a>
+                <a href="categories.php"><li class="list">Courses</li></a>
+                <a href="aboutus.php"><li class="list">About us</li></a>
+                <a href="contact-us.php"><li class="list">Contact us</li></a>
+            </ul>
+        </div>
         <div class="welcome">
             <h5><?php echo "Welcome, " . $_SESSION['name'] ?></h5>
         </div>

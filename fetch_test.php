@@ -63,19 +63,19 @@ while ($row = mysqli_fetch_assoc($result1)) {
         if (mysqli_num_rows($checkResult) == 0) {
             // Record doesn't exist, so insert the data into the database
             $customer_name = $result->customer_details->customer_name;
-            echo $customer_name;
+            // echo $customer_name;
             $customer_phone = $result->customer_details->customer_phone;
-            echo $customer_phone;
+            // echo $customer_phone;
             $customer_email = $result->customer_details->customer_email;
-            echo $customer_email;
+            // echo $customer_email;
             $link_amount = $result->link_amount;
-            echo $link_amount;
+            // echo $link_amount;
             $link_purpose = $result->link_purpose;
-            echo $link_purpose;
+            // echo $link_purpose;
             $link_status = $result->link_status;
-            echo $link_status;
+            // echo $link_status;
             $link_created_at = $result->link_created_at;
-            echo $link_created_at;
+            // echo $link_created_at;
 
             // Construct and execute SQL query to insert data into the database
             $insertSql = "INSERT INTO fetch_pl_details (link_id, customer_name, customer_phone, customer_email, link_created_at, link_amount, link_purpose, link_status) 
