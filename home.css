@@ -71,7 +71,9 @@ body{
     border-radius: 50%;
     cursor: pointer;
 }
-
+.profile-dropdown hr{
+    margin: 0.5rem 0;
+}
 /* .profile-container:hover .profile-dropdown {
     display: block;
 } */

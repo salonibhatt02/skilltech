@@ -310,7 +310,9 @@ body{
             border-radius: 50%;
             cursor: pointer;
         }
-
+        .profile-dropdown hr{
+            margin: 0.5rem 0;
+        }
         /* .profile-container:hover .profile-dropdown {
             display: block;
         } */
@@ -354,7 +356,11 @@ body{
             <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
             <div class="profile-dropdown" id="dropdown">
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
-                <a href="#">My Courses</a>
+                <a href="my_courses.php">My Courses</a>
+                <hr>
+                <a href="edit_profile.php">Edit Profile</a>
+                <hr>
+                <a href="transactions.php">Transactions</a>
                 <hr>
                 <!-- <center> -->
                 <a href="logout.php" style="color:blue;" class="logout">
@@ -416,14 +422,14 @@ body{
             <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="9d5955d0-f647-4827-9888-845632eb2824">
                 <div>
-                  <input type = "text" class = "form-control" name="name" placeholder="Full Name">
-                  <input type = "text" class = "form-control" name="query" placeholder="Query Title">
+                  <input type = "text" class = "form-control" name="name" placeholder="Full Name" required>
+                  <input type = "text" class = "form-control" name="query" placeholder="Query Title" required>
                 </div>
                 <div>
-                  <input type = "email" class = "form-control" name="email" placeholder="E-mail">
-                  <input type = "text" class = "form-control" name="phone" placeholder="Phone">
+                  <input type = "email" class = "form-control" name="email" placeholder="E-mail" required>
+                  <input type = "text" class = "form-control" name="phone" placeholder="Phone" required>
                 </div>
-                <textarea rows = "5" placeholder="Message" name="message" class = "form-control"></textarea>
+                <textarea rows = "5" placeholder="Message" name="message" class = "form-control" required></textarea>
                 <input type = "submit" class = "send-btn" name="submit" value = "send message">
               </form>
 

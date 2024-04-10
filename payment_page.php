@@ -34,7 +34,35 @@ $amount = $_GET['amount'];
   <title>Payment</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="home.css">
- 
+  <style>
+    .course-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 230px;
+    margin-top: 150px;
+    float: right;
+  }
+
+  .course-card > hr{
+    margin: 6px;
+  }
+  
+  .course-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: contain;
+    /* margin-bottom: 20px; */
+  }
+  .cancel-pl{
+    margin-top: -80px;
+    margin-left: -335px;
+  }
+  </style>
   <script>
       function display(){
           var dropdown = document.getElementById("dropdown");
@@ -89,7 +117,7 @@ $amount = $_GET['amount'];
         while($row = mysqli_fetch_assoc($result)){
             ?>
 
-<div class='card'>
+<!-- <div class='card'>
                     <div class='image'>
                         <img src='product-img/<?php echo $row['image'] ?>' alt='' height='' width='250px'>
                     </div>
@@ -98,6 +126,13 @@ $amount = $_GET['amount'];
                         <p class='card-text'><?php echo $row['description'] ?></p>
                         <p class='card-price'>Rs. <?php echo $row['price'] ?></p>
                         </div>
+                </div> -->
+                <div class="course-card">
+                    <img src='product-img/<?php echo $row['image'] ?>' alt="Course Image 1">
+                    <hr>
+                    <h2><?php echo $row['title'] ?></h2>
+                    <p><?php echo $row['categories'] ?></p>
+                    <p>Rs. <?php echo $row['price'] ?></p>
                 </div>
            
 
@@ -105,12 +140,12 @@ $amount = $_GET['amount'];
   <!-- <iframe src="create_pl.php?amount=" name="abc" width="100%" height="550" style="border:none;">
 </iframe> -->
 
-                        <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="50%" height="550" style="border:none;"></iframe>
+                        <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="50%" height="600" style="border:none;margin-top:30px;"></iframe>
 
 
 <!-- &link_id= echo $link_id;  -->
 <!-- <button type="button" class="btn btn-primary" > CANCEL </button> -->
-<a href="cancel_pl.php" class="btn btn-primary">CANCEL</a>
+<a href="cancel_pl.php" class="btn btn-primary cancel-pl">CANCEL</a>
 
 
 

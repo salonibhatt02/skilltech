@@ -184,11 +184,11 @@
         <form action="edit_profile.php" onsubmit="return validatePassword()" method="post">
             <div class="mb-3">
             <label for="name" class="form-label">Name :</label>
-            <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="name" id="name" value="<?php echo $_SESSION['name'] ?>" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
             <label for="phone" class="form-label">Phone no :</label>
-            <input type="text" class="form-control" name="phone" id="phone" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $_SESSION['phone'] ?>" aria-describedby="emailHelp">
             </div>
             <div class="mb-0">
             <label for="password" class="form-label">Password :</label>
