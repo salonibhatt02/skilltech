@@ -219,6 +219,10 @@ body{
 .logout{
     margin-right: 12px;
 } */
+
+*{
+    font-family: 'Lato';
+}
 .nav{
     display: flex;
     justify-content: space-between;

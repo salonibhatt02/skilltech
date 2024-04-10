@@ -1,3 +1,6 @@
+*{
+    font-family: 'Lato';
+}
 .nav{
     display: flex;
     justify-content: space-between;
@@ -149,6 +152,8 @@ body{
     text-align: center;
     margin-bottom: 20px;
     margin:20px;
+    border-radius: 6px;
+    box-shadow: black 6px 6px 5px 5px;
   }
   
   .course-card img {

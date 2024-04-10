@@ -46,6 +46,51 @@ $amount = $_GET['amount'];
           }
       }
   </script>
+  <style>
+     *{
+            font-family: 'Lato';
+        }
+    .course-card-container {
+    /* width: 400px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .course-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 370px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin:20px;
+    border-radius: 6px;
+    box-shadow: black 6px 6px 5px 5px;
+  }
+  
+  .course-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+    object-fit: contain;
+    /* margin-bottom: 20px; */
+  }
+  
+  .course-card h2 {
+    margin-top: 0;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust alignment as needed */
+}
+iframe {
+  margin-top: 30px;
+  border-radius: 6px;
+}
+
+  </style>
   </head>
 <body>
   <div class="nav">
@@ -89,29 +134,32 @@ $amount = $_GET['amount'];
         while($row = mysqli_fetch_assoc($result)){
             ?>
 
-<div class='card'>
-                    <div class='image'>
-                        <img src='product-img/<?php echo $row['image'] ?>' alt='' height='' width='250px'>
-                    </div>
-                    <div class='card-body'>
-                        <h3 class='card-title'><?php echo $row['title'] ?></h3>
-                        <p class='card-text'><?php echo $row['description'] ?></p>
-                        <p class='card-price'>Rs. <?php echo $row['price'] ?></p>
-                        </div>
-                </div>
+
            
 
   
   <!-- <iframe src="create_pl.php?amount=" name="abc" width="100%" height="550" style="border:none;">
 </iframe> -->
-
+<div class="container">
                         <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="50%" height="550" style="border:none;"></iframe>
 
+                        <div class="course-card">
+                    <img src='product-img/<?php echo $row['image'] ?>' alt="Course Image 1">
+                    <hr>
+                    <h2><?php echo $row['title'] ?></h2>
+                    <p><?php echo $row['description'] ?></p>
+                    <p>Rs. <?php echo $row['price'] ?></p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['id'] ?>">Buy Now</button>
+                </div>
+                
+                </div>
+        </div>
 
 <!-- &link_id= echo $link_id;  -->
 <!-- <button type="button" class="btn btn-primary" > CANCEL </button> -->
+<center>
 <a href="cancel_pl.php" class="btn btn-primary">CANCEL</a>
-
+</center>
 
 
 <?php } ?>

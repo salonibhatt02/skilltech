@@ -104,7 +104,6 @@
                     <p>Rs. <?php echo $row['price'] ?></p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['id'] ?>">Buy Now</button>
                 </div>
-                
                 </div>
                 
             <?php 
@@ -149,7 +148,7 @@
                         <p><a href="create_pl.php?amount=?amount=" target="iframe_a">pay now</a></p> -->
 
                         <!-- <a href="payment_page.php" class="btn btn-primary">Pay Now</a> -->
-                        <a href="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">Pay Now</a>
+                        <a href="payment_page.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" class="btn btn-primary">Pay Now</a>
 
                     </div>
             </div>

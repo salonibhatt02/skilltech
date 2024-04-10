@@ -58,6 +58,11 @@ if(!isset($_SESSION['email'])){
               <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
               <a href="#">My Courses</a>
               <hr>
+              
+                <a href="edit_profile.php">Edit Profile</a>
+                <hr>
+                <a href="transactions.php">Transactions</a>
+                <hr>
               <!-- <center> -->
               <a href="logout.php" style="color:blue;" class="logout">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -83,14 +88,14 @@ if(!isset($_SESSION['email'])){
           <img src="bg_5.jpg"  alt="..." height="450px" width="1000px">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+      </button> -->
     </div>
     </center>
 
@@ -101,7 +106,7 @@ if(!isset($_SESSION['email'])){
         </svg>
         <div class="card-body">
           <h4>Certified Teachers</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <p class="card-text">We provide with the most skilled and educated teachers for students</p>
         </div>
       </div>
     
@@ -111,7 +116,7 @@ if(!isset($_SESSION['email'])){
         </svg>
         <div class="card-body">
           <h4>Special Education</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <p class="card-text">Students here experience personalized learning with Quality learning</p>
         </div>
       </div>
     
@@ -121,7 +126,7 @@ if(!isset($_SESSION['email'])){
         </svg>
         <div class="card-body">
           <h4>Book &amp; Library</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <p class="card-text">PDF of all the books and documents avaliable with the courses you select</p>
         </div>
       </div>
       
@@ -130,8 +135,8 @@ if(!isset($_SESSION['email'])){
           <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
         </svg>
         <div class="card-body">
-          <h4>Sport Clubs</h4>
-          <p class="card-text">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic</p>
+          <h4>Courses</h4>
+          <p class="card-text">Lots of courses to choose from, be it beginner level or expert level.</p>
         </div>
       </div>
 
