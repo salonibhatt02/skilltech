@@ -158,7 +158,7 @@ if(!isset($_SESSION['email'])){
             <img class="profile-image" src="profile.jpg" alt="Profile Picture" width="42px" height="42px" onclick="display()">
             <div class="profile-dropdown" id="dropdown">
                 <p><?php echo "Hi, " . $_SESSION['name'] ?></p>
-                <a href="#">My Courses</a>
+                <a href="my_courses.php">My Courses</a>
                 <hr>
                 <a href="edit_profile.php">Edit Profile</a>
                 <hr>

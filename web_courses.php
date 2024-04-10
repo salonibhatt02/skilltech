@@ -99,10 +99,29 @@
                 <div class="course-card">
                     <img src='product-img/<?php echo $row['image'] ?>' alt="Course Image 1">
                     <hr>
-                    <h2><?php echo $row['title'] ?></h2>
-                    <p><?php echo $row['categories'] ?></p>
-                    <p>Rs. <?php echo $row['price'] ?></p>
+                    <h4><?php echo $row['title'] ?></h4>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+                        </svg>
+                        <?php echo $row['videos'] ?> Videos
+                    </p>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        </svg>
+                        <?php echo $row['duration'] ?> Hours
+                    </p>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>
+                        <?php echo $row['lecturer'] ?>
+                    </p>
+                    <h5>Rs. <?php echo $row['price'] ?></h5>
+                    <center>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['id'] ?>">Buy Now</button>
+                    </center>
                 </div>
                 </div>
                 

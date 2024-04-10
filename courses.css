@@ -148,24 +148,40 @@ body{
     background-color: white;
     border: 1px solid #ccc;
     padding: 20px;
-    width: 370px;
-    text-align: center;
+    width: 350px;
+    /* text-align: center; */
     margin-bottom: 20px;
     margin:20px;
     border-radius: 6px;
     box-shadow: black 6px 6px 5px 5px;
   }
+
+  .course-card > hr{
+    margin: 6px;
+  }
   
   .course-card img {
     width: 100%;
-    height: 180px;
+    height: 150px;
     border-radius: 5px;
     object-fit: contain;
     /* margin-bottom: 20px; */
   }
   
-  .course-card h2 {
+  .course-card h4 {
     margin-top: 0;
+    text-align: center;
+  }
+  .course-card h5 {
+    margin-bottom: 17px;
+    text-align: center;
+  }
+  .course-card p {
+    margin-left: 9px;
+  }
+  .course-card p > svg{
+    margin-right: 5px;
+    margin-top: -2px
   }
   
   .course-card button {
@@ -175,6 +191,7 @@ body{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    align-items: center;
     /* margin-top: 20px; */
   }
 /* .profile-container {

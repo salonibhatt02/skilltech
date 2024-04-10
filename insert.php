@@ -20,8 +20,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   $description = $_POST["description"];
   $image = $_POST["image"];
   $categories = $_POST["categories"];
+  $videos = $_POST["videos"];
+  $duration = $_POST["duration"];
+  $lecturer = $_POST["lecturer"];
 
-  $sql = "INSERT INTO `product`(`title`,`price`,`description`,`image`,`categories`) VALUES ('$title','$price','$description','$image','$categories')";
+  $sql = "INSERT INTO `product`(`title`,`price`,`description`,`image`,`categories`,`videos`,`duration`,`lecturer`) VALUES ('$title','$price','$description','$image','$categories','$videos','$duration','$lecturer')";
 
   $result = mysqli_query($conn, $sql);
 
@@ -67,6 +70,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         <div class="form-group">
             <label for="exampleFormControlInput1">Price</label>
             <input type="number" class="form-control" id="Price" name="price" placeholder="100 INR">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">No of Videos</label>
+            <input type="number" class="form-control" id="Videos" name="videos" placeholder="5">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Duration(in hours)</label>
+            <input type="number" class="form-control" id="Duration" name="duration" placeholder="3">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Lecturer</label>
+            <input type="text" class="form-control" id="Lecturer" name="lecturer" placeholder="John Doe">
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Image</label>
