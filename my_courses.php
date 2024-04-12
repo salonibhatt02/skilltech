@@ -29,7 +29,9 @@
         .profile-dropdown hr{
             margin: 0.5rem 0;
         }
-
+        .course-card{
+            width: 334px;
+        }
   </style>
 </head>
 <body>
