@@ -8,6 +8,7 @@
         $email = $_POST["mail"];
         $phone = $_POST["phone"];
         $password = $_POST["passw"];
+        $role = "user";
 
         $pass = password_hash($password, PASSWORD_BCRYPT);
 
@@ -35,7 +36,7 @@
     
         else{
         // }
-        $sql = "INSERT INTO `customers`(`name`,`email`,`phone`,`password`) VALUES ('$name','$email','$phone','$pass')";
+        $sql = "INSERT INTO `customers`(`name`,`email`,`phone`,`password`,`role`) VALUES ('$name','$email','$phone','$pass','$role')";
 
         $result = mysqli_query($conn, $sql);
 

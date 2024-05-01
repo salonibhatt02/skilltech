@@ -140,7 +140,7 @@ $amount = $_GET['amount'];
   <!-- <iframe src="create_pl.php?amount=" name="abc" width="100%" height="550" style="border:none;">
 </iframe> -->
 
-                        <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="50%" height="600" style="border:none;margin-top:30px;"></iframe>
+                        <iframe src="create_pl.php?amount=<?php echo $row['price']; ?>&title=<?php echo urlencode($row['title']); ?>" name="abc" width="50%" height="600" style="border:none;margin-top:30px;margin-left:20px;"></iframe>
 
 
 <!-- &link_id= echo $link_id;  -->

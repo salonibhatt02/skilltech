@@ -21,11 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pass_decode = password_verify($password, $db_pass);
         $name = $email_pass['name'];
         $phone = $email_pass['phone'];
-            if($pass_decode){
+        $role = $email_pass['role'];
+            if($pass_decode && $role == "user"){
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $name;
                 $_SESSION['phone'] = $phone;
                 header("Location: home.php");
+                exit();    
+            }
+            elseif($pass_decode && $role == "admin"){
+                $_SESSION['mail'] = $email;
+                $_SESSION['aname'] = $name;
+                $_SESSION['aphone'] = $phone;
+                header("Location: Admin\admin.php");
                 exit();    
             }
             else{
